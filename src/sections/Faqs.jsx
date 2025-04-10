@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Tag from "../components/Tag";
+import { AnimatePresence, motion } from "motion/react";
 
 const faqs = [
   {
@@ -34,7 +36,7 @@ const faqs = [
 ];
 
 const Faqs = () => {
-  var selectedFaqIndex = 0;
+  const [selectedFaqIndex, setSelectedFaqIndex] = useState(0);
   return (
     <section className=" px-8 lg:px-12 py-24 flex flex-col items-center justify-center gap-10 ">
       {/* Tag */}
@@ -52,10 +54,17 @@ const Faqs = () => {
           /* Faq */
           <div
             key={faq.index}
-            className=" w-full max-w-xl p-6 flex flex-col gap-4 border border-white/15 rounded-2xl bg-neutral-900 "
+            className=" w-full max-w-xl p-6 flex flex-col border border-white/15 rounded-2xl bg-neutral-900 "
           >
             <div className=" flex justify-between gap-1 ">
-              <h3 className=" font-medium ">{faq.question}</h3>
+            {/* Faq Question */}
+              <h3
+                className=" font-medium cursor-pointer "
+                onClick={() => setSelectedFaqIndex(faq.index)}
+              >
+                {faq.question}
+              </h3>
+              {/* Faq Open-Clone Button */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -68,19 +77,28 @@ const Faqs = () => {
                 strokeLinejoin="round"
                 className={` feather feather-plus text-lime-400 shrink-0 ${
                   faq.index === selectedFaqIndex ? " rotate-45 " : ""
-                } `}
+                } cursor-pointer transition duration-300 `}
+                onClick={() => setSelectedFaqIndex(faq.index)}
               >
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
             </div>
-            <div
-              className={` ${
-                faq.index !== selectedFaqIndex ? " hidden " : ""
-              } `}
-            >
-              <p className=" text-white/50 ">{faq.answer}</p>
-            </div>
+            {/* Open-Close Animation */}
+            <AnimatePresence>
+              {selectedFaqIndex === faq.index && (
+                /* Faq Answer */
+                <motion.div
+                  initial={{ height: 0, marginTop: 0 }}
+                  animate={{ height: "auto", marginTop: 12 }}
+                  exit={{ height: 0, marginTop: 0 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className=" mt-6  overflow-hidden "
+                >
+                  <p className=" text-white/50 ">{faq.answer}</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         ))}
       </div>

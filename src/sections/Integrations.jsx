@@ -75,7 +75,7 @@ const Integrations = () => {
       {/* Integration Listing Grid */}
         <div className=" flex md:grid md:grid-cols-2 gap-4 ">
           <IntegrationsList integrations={integrations} />
-          <IntegrationsList integrations={integrations.slice().reverse()} className=" hidden md:flex " />
+          <IntegrationsList integrations={integrations.slice().reverse()} reveseEnabled className=" hidden md:flex " />
         </div>
       </div>
     </section>
