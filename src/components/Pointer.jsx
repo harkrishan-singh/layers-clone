@@ -17,7 +17,13 @@ const Pointer = ({ label, color }) => {
         <path d="M13 13l6 6"></path>
       </svg>
       <div
-        className={` absolute top-full left-full px-2 inline-flex text-xs font-semibold text-center text-white rounded-full rounded-tl-none ${color === "red" ? "bg-red-500" : color === "blue" ? "bg-blue-500" : "bg-green-500"} `}
+        className={` absolute top-full left-full px-2 inline-flex text-xs font-semibold text-center text-white rounded-full rounded-tl-none ${
+          color === "red"
+            ? "bg-red-500"
+            : color === "blue"
+            ? "bg-blue-500"
+            : "bg-green-500"
+        } `}
       >
         {label}
       </div>
