@@ -1,21 +1,33 @@
-# React + Vite
+# **Layers-Clone**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# ✨ Frontend Website with React, Tailwind CSS, and Framer Motion
 
-Currently, two official plugins are available:
+## 🌟 Overview 
+This project is a modern, interactive frontend website built using **React**, **Tailwind CSS** for styling, and **Framer Motion** for animations. The website includes multiple sections with smooth animations and engaging user interactions.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features 
+✔ **Responsive Design** – Works seamlessly across all devices  
+✔ **Animations & Transitions** – Powered by Framer Motion  
+✔ **Interactive Components** – Hover effects, scroll animations, and more  
+✔ **Modern UI** – Clean and professional design using Tailwind CSS  
 
-## Expanding the ESLint configuration
+## 📌 Sections Included 
+1. **Header/Navbar** – Sticky navigation with smooth scrolling  
+2. **Hero Section** – Eye-catching intro with animated elements  
+3. **Logo Strip/Slider** – Auto-sliding company logos or badges  
+4. **Introduction** – Brief about the product/service with font color animations  
+5. **Features** – Highlighted key features with interactive cards  
+6. **Integrations** – Showcase of supported integrations  
+7. **FAQs** – Collapsible accordion for common questions  
+8. **Call to Action (CTA)** – Engaging section to drive user action  
+9. **Footer** – Complete with logo and links  
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Technologies Used 
+- **React** – Frontend library for building UI components  
+- **Tailwind CSS** – Utility-first CSS framework for styling  
+- **Framer Motion** – Animation library for React 
 
+## 📦 Deployment
 
-read about - whitespace-nowrap
-
-
-create cursor in hero
-Fix the navbar dropdown issue
-Animate Introduction section
-Fix Form selection border  (Enter your email)
+- **GitHub Pages**  
+- **Link** - `https://harkrishan-singh.github.io/layers-clone/`

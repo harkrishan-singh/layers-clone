@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 const buttonStyles = cva(
-  " h-11 w-auto px-6 flex items-center justify-center text-md font-medium border rounded-full cursor-pointer whitespace-nowrap ",
+  " h-11 w-auto px-6 flex items-center justify-center text-md font-medium border rounded-full cursor-pointer whitespace-nowrap hover:scale-[99%] transition duration-100  ",
   {
     variants: {
       variant: {
