@@ -74,23 +74,23 @@ const Features = () => {
               imageUrl={LunaAvatar}
               altText="Luna Profile Image"
               color="indigo"
-              className=" z-30 -ml-5  "
+              className=" z-30 -ml-6 sm:-ml-4  "
             />
             <Avatar
               imageUrl={FlorenceAvatar}
               altText="Florence Profile Image"
               color="amber"
-              className=" z-20 -ml-5 "
+              className=" z-20 -ml-6 sm:-ml-4 "
             />
             {/* Hover Animation */}
-            <div className=" relative z-10 -ml-5 size-24 rounded-full bg-neutral-700 ">
+            <div className=" relative z-10 -ml-6 sm:-ml-4 h-[clamp(60px,84px,110px)] w-[clamp(60px,84px,110px)] aspect-square rounded-full bg-neutral-700 ">
               <Avatar
                 imageUrl={OwenGarcia}
                 altText="Owen Profile Image"
                 color="green"
-                className=" absolute inset-0  h-full w-auto z-10 opacity-0 group-hover:opacity-100 transition duration-500 "
+                className=" absolute inset-0 h-full w-full object-cover z-10 opacity-0 group-hover:opacity-100 transition duration-500 "
               />
-              <div className=" absolute inset-0 flex items-center justify-center gap-1 group-hover:opacity-0 transition duration-500 ">
+              <div className=" absolute inset-0 h-full w-full object-cover flex items-center justify-center gap-1 group-hover:opacity-0 transition duration-500 ">
                 <div className=" size-2 rounded-full bg-white "></div>
                 <div className=" size-2 rounded-full bg-white "></div>
                 <div className=" size-2 rounded-full bg-white "></div>

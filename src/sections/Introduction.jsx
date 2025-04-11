@@ -41,7 +41,7 @@ const Introduction = () => {
 
   return (
     <section className=" px-8 lg:px-12 py-28 lg:py-40  ">
-      <div className=" sticky top-36 md:top-40 flex flex-col items-center justify-center gap-10 ">
+      <div className=" sticky top-34 md:top-40 flex flex-col items-center justify-center gap-10 ">
         {/* Tag */}
         <div className=" flex items-center justify-center ">
           <Tag value="Introducing Layers" />
