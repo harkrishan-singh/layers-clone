@@ -38,9 +38,7 @@ const Navbar = () => {
     <>
       <section className=" h-auto w-full px-8 lg:px-12 py-4 lg:py-6 text-white text-sm fixed top-0 z-50 ">
         <div
-          className={` max-w-5xl mx-auto border border-white/15 ${
-            isOpen === false ? " rounded-full " : " rounded-[27px] "
-          } bg-neutral-950/70 backdrop-blur transition `}
+          className={` max-w-5xl mx-auto border border-white/15 rounded-[27px] md:rounded-full bg-neutral-950/70 backdrop-blur transition `}
         >
           <div className=" h-auto w-full max-w-5xl mx-auto px-4 md:px-2 py-2 flex items-center justify-between ">
             {/* Logo */}
