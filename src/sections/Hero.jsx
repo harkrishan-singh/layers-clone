@@ -1,9 +1,49 @@
+import { motion, useAnimate } from "motion/react";
+import { useEffect } from "react";
+
 import Button from "../components/Button";
 import Pointer from "../components/Pointer";
 import DesignImg1 from "../assets/images/design-example-1.png";
 import DesignImg2 from "../assets/images/design-example-2.png";
 
 const Hero = () => {
+  const [leftDesignImageScope, leftDesignImageAnimate] = useAnimate();
+  const [rightDesignImageScope, rightDesignImageAnimate] = useAnimate();
+  const [leftCursorScope, leftCursorAnimate] = useAnimate();
+  const [rightCursorScope, rightCursorAnimate] = useAnimate();
+
+  useEffect(() => {
+    leftDesignImageAnimate([
+      [leftDesignImageScope.current, { opacity: 1 }, { duration: 0.5 }],
+      [leftDesignImageScope.current, { x: 0, y: 0 }, { duration: 0.5 }],
+    ]);
+
+    leftCursorAnimate([
+      [leftCursorScope.current, { opacity: 1 }, { duration: 0.5 }],
+      [leftCursorScope.current, { x: -100, y: 0 }, { duration: 0.5 }],
+      [
+        leftCursorScope.current,
+        { x: 0, y: [0, 16, 0] },
+        { duration: 0.5, ease: "easeInOut" },
+      ],
+    ]);
+
+    rightDesignImageAnimate([
+      [
+        rightDesignImageScope.current,
+        { opacity: 1 },
+        { duration: 0.5, delay: 1.5 },
+      ],
+      [rightDesignImageScope.current, { x: 0, y: 0 }, { duration: 0.5 }],
+    ]);
+
+    rightCursorAnimate([
+      [rightCursorScope.current, { opacity: 1 }, { duration: 0.5, delay: 1.5 }],
+      [rightCursorScope.current, { x: 175, y: 0 }, { duration: 0.5 }],
+      [rightCursorScope.current, { x: 0, y: [0, 16, 0] }, { duration: 0.5 }],
+    ]);
+  }, []);
+
   return (
     <section className=" relative mx-auto px-8 lg:px-12 py-24 flex flex-col items-center justify-center gap-6 ">
       {/* Banner */}
@@ -31,19 +71,37 @@ const Hero = () => {
         </Button>
       </form>
       {/* Cursor Images */}
-      <div className=" absolute hidden md:block  bottom-2/12 left-1/12 lg:bottom-30 lg:left-45 -z-10  ">
+      <motion.div
+        className=" absolute hidden md:block  bottom-2/12 left-1/12 lg:bottom-30 lg:left-45 z-10  "
+        ref={leftCursorScope}
+        initial={{ opacity: 0, x: -200, y: 100 }}
+      >
         <Pointer label="Harry" color="blue"></Pointer>
-      </div>
-      <div className=" absolute hidden md:block top-2/12 right-2/12 lg:top-20 lg:right-75 -z-10 ">
+      </motion.div>
+      <motion.div
+        className=" absolute hidden md:block top-2/12 right-2/12 lg:top-20 lg:right-75 z-10 "
+        ref={rightCursorScope}
+        initial={{ opacity: 0, x: 275, y: 100 }}
+      >
         <Pointer label="Piyush" color="red"></Pointer>
-      </div>
+      </motion.div>
       {/* Design Example Images */}
-      <div className=" absolute hidden lg:block top-32 -left-40 ">
-        <img src={DesignImg1} alt="Design Image 1"></img>
-      </div>
-      <div className=" absolute hidden lg:block top-10 -right-70 ">
-        <img src={DesignImg2} alt="Design Image 2"></img>
-      </div>
+      <motion.div
+        className=" absolute hidden lg:block top-32 -left-40 "
+        ref={leftDesignImageScope}
+        initial={{ opacity: 0, x: -100, y: 100 }}
+        drag
+      >
+        <img src={DesignImg1} alt="Design Image 1" draggable="false"></img>
+      </motion.div>
+      <motion.div
+        className=" absolute hidden lg:block top-10 -right-70 "
+        ref={rightDesignImageScope}
+        initial={{ opacity: 0, x: 100, y: 100 }}
+        drag
+      >
+        <img src={DesignImg2} alt="Design Image 2" draggable="false"></img>
+      </motion.div>
     </section>
   );
 };
