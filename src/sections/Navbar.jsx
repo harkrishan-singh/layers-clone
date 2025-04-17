@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 import Button from "../components/Button";
@@ -13,6 +13,26 @@ const menuList = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // For ensuring the menu doesn't stay open when switching from mobile to desktop view.
+  useEffect(() => {
+    // Function to update the isOpen state based on window width
+    const setIsOpenState = () => {
+      if (window.innerWidth > 768) {
+        setIsOpen(false);
+      }
+    };
+
+    setIsOpenState();
+
+    // Updates the state if the window height chang
+    window.addEventListener("resize", setIsOpenState);
+
+    // Cleanup: remove the event listener when component unmounts
+    return () => {
+      window.removeEventListener("resize", setIsOpenState);
+    };
+  }, []);
 
   return (
     <>

@@ -45,9 +45,14 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className=" relative mx-auto px-8 lg:px-12 py-24 flex flex-col items-center justify-center gap-6 ">
+    <section
+      className=" relative mx-auto px-8 lg:px-12 py-24 flex flex-col items-center justify-center gap-6 "
+      style={{
+        cursor: `url(src/assets/images/cursor-you.svg), auto`,
+      }}
+    >
       {/* Banner */}
-      <div className=" px-3 py-1 inline-flex text-md font-semibold text-neutral-950 rounded-full bg-gradient-to-r from-purple-400 to-pink-400  ">
+      <div className=" px-3 py-1 inline-flex text-md font-semibold text-neutral-950 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 hover:scale-[97%] hover:rotate-1 transition duration-300  ">
         ✨ $7.5M seed round raised
       </div>
       {/* Heading */}
@@ -64,7 +69,7 @@ const Hero = () => {
       <form className=" sm:w-full max-w-lg p-2 flex items-center justify-between border border-white/15 rounded-full bg-neutral-950 ">
         <input
           placeholder=" Enter your email "
-          className=" px-4 text-white bg-transparent "
+          className=" px-4 text-white bg-transparent appearance-none outline-none "
         ></input>
         <Button type="submit" variant="primary" size="sm">
           Sign Up
