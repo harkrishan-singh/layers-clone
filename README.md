@@ -13,10 +13,3 @@ If you are developing a production application, we recommend using TypeScript an
 
 
 read about - whitespace-nowrap
-
-twMerge
-
-py-24
-
-gap-24 pr-24
-[mask-image: linear-gradient(to_right, transparent, black_10%, black_90%, transparent) ]>
