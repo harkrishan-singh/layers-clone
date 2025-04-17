@@ -1,6 +1,8 @@
 import { motion, useAnimate } from "motion/react";
 import { useEffect } from "react";
 
+import youCursor from "../../public/cursor-you.svg" 
+
 import Button from "../components/Button";
 import Pointer from "../components/Pointer";
 import DesignImg1 from "../assets/images/design-example-1.png";
@@ -48,7 +50,7 @@ const Hero = () => {
     <section
       className=" relative mx-auto px-8 lg:px-12 py-24 flex flex-col items-center justify-center gap-6 "
       style={{
-        cursor: `url(src/assets/images/cursor-you.svg), auto`,
+        cursor: `url(${youCursor}), auto`,
       }}
     >
       {/* Banner */}

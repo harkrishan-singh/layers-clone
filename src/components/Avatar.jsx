@@ -1,7 +1,7 @@
 const Avatar = ({ imageUrl, altText, color, className }) => {
   return (
     <div
-      className={` inline-flex border-4 ${
+      className={` h-[clamp(60px,84px,110px)] w-[clamp(60px,84px,110px)] aspect-square inline-flex border-4 ${
         color === "blue"
           ? "border-blue-500"
           : color === "indigo"
